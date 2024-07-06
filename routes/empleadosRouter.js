@@ -4,9 +4,9 @@ const router = express.Router()
 const { traerEmpleados, traerEmpleado, crearEmpleado, actualizarEmpleado, borrarEmpleado } = require("../controllers/empleadosControllers.js")
 
 router.get("/", traerEmpleados) // 
-router.get("/:id", traerEmpleado) // 
+router.get("/:empleadoId", traerEmpleado) // 
 router.post("/", crearEmpleado) // 
-router.put("/:id", actualizarEmpleado) // 
-router.delete("/:id", borrarEmpleado) //
+router.put("/:empleadoId", actualizarEmpleado) // 
+router.delete("/:empleadoId", borrarEmpleado) //
 
 module.exports = router

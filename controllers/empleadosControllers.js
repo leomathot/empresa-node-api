@@ -15,7 +15,7 @@ const traerEmpleados = async (req, res) => {
 // READ - GET
 const traerEmpleado = async (req, res) => {
     try {
-        const empleado = await empleadosModel.findByPk(req.params.id)
+        const empleado = await empleadosModel.findByPk(req.params.empleadoId)
         res.json(empleado)
     } catch (error) {
         res.json({ message: error.message })
@@ -38,7 +38,7 @@ const crearEmpleado = async (req, res) => {
 const actualizarEmpleado = async (req, res) => {
     try {
         await empleadosModel.update(req.body, {
-            where: { id: req.params.id }
+            where: { empleadoId: req.params.empleadoId }
         })
         res.json({ "message": "Registro actualizado correctamente" })
     } catch (error) {
@@ -51,9 +51,9 @@ const actualizarEmpleado = async (req, res) => {
 const borrarEmpleado = async (req, res) => {
     try {
         await empleadosModel.destroy({
-            where: { id: req.params.id }
+            where: { empleadoId: req.params.empleadoId }
         })
-        res.json({ "message": `Se borró el registro ${req.params.id}` })
+        res.json({ "message": `Se borró el registro ${req.params.empleadoId}` })
     } catch (error) {
         res.json({ message: error.message })
     }
