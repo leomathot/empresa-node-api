@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-const PORT = 3030
+const PORT = process.env.PORT || 3030
 const cors = require("cors")
 const empleadosRouter = require("./routes/empleadosRouter.js")
 const db = require ("./data/db.js")
