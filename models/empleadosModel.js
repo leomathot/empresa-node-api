@@ -3,6 +3,10 @@ const db = require("../data/db.js")
 const { DataTypes } = require("sequelize")
 
 const empleadosModel = db.define("empleados", {
+    empleadoId: {
+        type: DataTypes.INTEGER,
+        primaryKey: true
+    },
     nombre: { type: DataTypes.STRING },
     apellido: { type: DataTypes.STRING },
     departamentoId: { type: DataTypes.STRING },
