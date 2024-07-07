@@ -10,10 +10,11 @@ app.use(express.json()) // analiza y lo pone en formato req.body
 
 app.get("/", (req, res) => {
     res.send(`
-        <code>
-            <h1>Empresa API</h1>
-            <p>Agregar <strong>/empleados</strong> para ver todos los registros</p>
-        </code>
+        <style>
+            body {font-family: Arial, sans-serif;}
+        </style>
+        <h1>Empresa API</h1>
+        <p>Agregar <strong>/empleados</strong> a la url para ver todos los registros</p>
     `)
 }) // sin modularizar
 
