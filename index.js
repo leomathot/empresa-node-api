@@ -9,7 +9,12 @@ app.use(cors())
 app.use(express.json()) // analiza y lo pone en formato req.body
 
 app.get("/", (req, res) => {
-    res.send("Home")
+    res.send(`
+        <code>
+            <h1>Empresa API</h1>
+            <p>Agregar <strong>/empleados</strong> para ver todos los registros</p>
+        </code>
+    `)
 }) // sin modularizar
 
 app.use("/empleados", empleadosRouter) // modularizado (empleadosRouter.js)
